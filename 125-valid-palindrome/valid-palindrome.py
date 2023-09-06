@@ -3,8 +3,6 @@ class Solution:
         aplhanumeric = "abcdefghijklmnopqrstuvwxyz0123456789"
         s = s.lower() 
         s = ''.join([char for char in s if char in aplhanumeric])
-        print(s)
-        inverse = s[::-1]
-        if inverse == s:
+        if s[::-1] == s:
             return True
         return False
