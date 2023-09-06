@@ -7,6 +7,8 @@ class Solution:
             if sPointer < len(s):
                 if i == s[sPointer]:
                     sPointer += 1
+            else:
+                break
         print(sPointer)
         if sPointer == len(s):
             return True
