@@ -9,7 +9,6 @@ class Solution:
                     sPointer += 1
             else:
                 break
-        print(sPointer)
         if sPointer == len(s):
             return True
         return False
