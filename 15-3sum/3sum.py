@@ -8,17 +8,16 @@ class Solution:
             first = i+1
             last = len(nums)-1
             while first < last:
-                if nums[i] + nums[first] +nums[last] == 0:
+                sums = nums[i] + nums[first] +nums[last]
+                if sums == 0:
                     output.append([nums[i] , nums[first] , nums[last]])
                     while first < last and nums[first] == nums[first + 1]:
                         first += 1
-                
                     while first < last and nums[last] == nums[last - 1]:
                         last -= 1
-
                     first += 1
                     last -= 1
-                elif nums[i] + nums[first] +nums[last] > 0:
+                elif sums > 0:
                     last -= 1
                 else:
                     first += 1
