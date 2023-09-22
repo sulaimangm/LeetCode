@@ -13,5 +13,5 @@ class Solution:
                 temp = float(stack.pop())
                 stack.append(int(float(stack.pop()) / temp))
             else:
-                stack.append(i)
-        return int(stack[0])
+                stack.append(int(i))
+        return stack[0]
