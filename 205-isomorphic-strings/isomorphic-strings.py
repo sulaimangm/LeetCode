@@ -8,14 +8,11 @@ class Solution:
 
         for i in range(len(s)):
             if s[i] in letters:
-                if letters[s[i]] == t[i]:
-                    continue
-                else:
+                if letters[s[i]] != t[i]:
                     return False
             else:
-                if t[i] not in matches:
-                    letters[s[i]] = t[i]
-                    matches.append(t[i])
-                else:
+                if t[i] in matches:
                     return False 
+                letters[s[i]] = t[i]
+                matches.append(t[i])
         return True
