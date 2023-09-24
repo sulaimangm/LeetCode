@@ -2,7 +2,7 @@ class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         matches = {}
         s = s.split()
-        words = []
+        words = {}
         
         if len(pattern) != len(s):
             return False
@@ -15,5 +15,5 @@ class Solution:
                 if s[i] in words:
                     return False
                 matches[pattern[i]] = s[i]
-                words.append(s[i])
+                words[s[i]] = pattern[i]
         return True   
