@@ -3,8 +3,7 @@ class Solution:
         indices = {}
         for i in range(len(nums)):
             if nums[i] in indices:
-                a = indices[nums[i]][-1]
-                if i - a <= k:
+                if i - indices[nums[i]][-1] <= k:
                     return True
                 indices[nums[i]]. append(i)
             else:
