@@ -8,3 +8,4 @@ class Solution:
                 indices[nums[i]]. append(i)
             else:
                 indices[nums[i]] = [i]
+        return False
