@@ -16,13 +16,9 @@ class Solution:
                 tail.next = list2
                 list2 = list2.next
                 tail = tail.next
-        while list1:
+        if list1:
             tail.next = list1
-            list1 = list1.next
-            tail = tail.next
-        while list2:
+        elif list2:
             tail.next = list2
-            list2 = list2.next
-            tail = tail.next
 
         return output.next
