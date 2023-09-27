@@ -6,10 +6,10 @@
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
-        visited = []
+        visited = {}
 
         while headB:
-            visited.append(headB)
+            visited[headB] = headB.val
             headB = headB.next
         while headA:
             if headA in visited:
