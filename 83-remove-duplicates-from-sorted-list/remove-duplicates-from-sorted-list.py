@@ -8,10 +8,8 @@ class Solution:
         temp = head
         while temp:
             while temp.next:
-                if temp.val == temp.next.val:
-                    temp.next = temp.next.next
-                    continue
-                else:
+                if temp.val != temp.next.val:
                     break
+                temp.next = temp.next.next
             temp = temp.next
         return head
