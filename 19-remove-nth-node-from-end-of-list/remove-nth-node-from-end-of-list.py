@@ -5,7 +5,7 @@
 #         self.next = next
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        stack = []
+        '''stack = []
         dummy = ListNode(next = head)
         curr = dummy
         while curr:
@@ -14,4 +14,20 @@ class Solution:
         for i in range(n):
             popped = stack.pop()
         stack[-1].next = popped.next
+        return dummy.next'''
+
+
+        dummy = ListNode(next = head)
+
+        l = dummy
+        r = dummy
+
+        for _ in range(n + 1):
+            l = l.next
+
+        while l:
+            l = l.next
+            r = r.next
+
+        r.next = r.next.next
         return dummy.next
