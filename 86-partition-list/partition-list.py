@@ -5,7 +5,7 @@
 #         self.next = next
 class Solution:
     def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
-        dummy = ListNode(next = head)
+        '''dummy = ListNode(next = head)
         less = []
         greater = []
 
@@ -28,5 +28,32 @@ class Solution:
         
         curr.next = None
 
+        return dummy.next'''
+
+
+        dummy = ListNode(next = head)
+        prev = dummy
+        curr = head
+        last = dummy
+        length = 0
+        while last.next:
+            last = last.next
+            length += 1
+        if length in [0,1]:
+            return head
+        
+        for _ in range(length):
+            print(curr.val)
+            if curr.val < x:
+                prev = curr
+                curr = curr.next
+            else:
+                last.next = curr
+                prev.next = curr.next
+                last = last.next
+                curr = curr.next
+                last.next = None
+        
         return dummy.next
+
         
