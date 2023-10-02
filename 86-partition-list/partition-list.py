@@ -43,7 +43,6 @@ class Solution:
             return head
         
         for _ in range(length):
-            print(curr.val)
             if curr.val < x:
                 prev = curr
                 curr = curr.next
