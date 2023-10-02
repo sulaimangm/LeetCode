@@ -8,18 +8,22 @@ class Solution:
         if not head:
             return head
         curr = head
-        l = 0
+        length = 0
         while curr:
             curr = curr.next
-            l += 1
-        for i in range(k%l):
-            curr = head
-            prev = None
-            while curr and curr.next:
-                prev = curr
-                curr = curr.next
-            if curr and prev:
-                curr.next = head
-                prev.next = None
-                head = curr
+            length += 1
+        k = k % length
+        r = head
+        l = head
+        for i in range(k):
+            r = r.next
+        
+        while r.next:
+            r = r.next
+            l = l.next
+        
+        r.next = head
+        head = l.next
+        l.next = None
+
         return head
