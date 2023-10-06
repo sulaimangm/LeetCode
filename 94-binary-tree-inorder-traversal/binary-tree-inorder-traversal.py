@@ -7,7 +7,7 @@
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         # Recursion
-        '''output = []
+        output = []
         
         def inorder(root: Optional[TreeNode]):
             if not root:
@@ -18,9 +18,10 @@ class Solution:
             inorder(root.right)
 
         inorder(root)
-        return output'''
+        return output
 
-        stack = []
+        # Stack DFS
+        '''stack = []
         output = []
         while stack or root:
             while root:
@@ -29,7 +30,7 @@ class Solution:
             root = stack.pop()
             output.append(root.val)
             root = root.right
-        return output
+        return output'''
 
 
             
