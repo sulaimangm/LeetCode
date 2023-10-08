@@ -14,17 +14,25 @@ class Solution:
             return None
         
         queue = deque([root])
-
+        temp = None
         while queue:
             for _ in range(len(queue)):
                 curr = queue.popleft()
                 if curr.left:
+                    if not temp:
+                        temp = curr.left
+                    else:
+                        temp.next = curr.left
+                        temp = curr.left
                     queue.append(curr.left)
                 if curr.right:
+                    if not temp:
+                        temp = curr.right
+                    else:
+                        temp.next = curr.right
+                        temp = curr.right
                     queue.append(curr.right)
-            for i in range(len(queue)-1):
-                if queue[i+1]:
-                    queue[i].next = queue[i+1]
+            temp = None
 
         return root    
             
