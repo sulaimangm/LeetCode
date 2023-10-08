@@ -14,21 +14,17 @@ class Solution:
             return None
         
         queue = deque([root])
-        nxt = []
 
         while queue:
             for _ in range(len(queue)):
                 curr = queue.popleft()
                 if curr.left:
                     queue.append(curr.left)
-                    nxt.append(curr.left)
                 if curr.right:
                     queue.append(curr.right)
-                    nxt.append(curr.right)
-            for i in range(len(nxt)-1):
-                if nxt[i+1]:
-                    nxt[i].next = nxt[i+1]
-            nxt = []
+            for i in range(len(queue)-1):
+                if queue[i+1]:
+                    queue[i].next = queue[i+1]
 
         return root    
             
