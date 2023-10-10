@@ -13,15 +13,15 @@ class Solution:
         def sums(root, num):
             if not root:
                 return 
-            num += str(root.val)
+            num = num * 10 + root.val
             if not root.left and not root.right:
                 numbers.append(num)
             sums(root.left, num)
             sums(root.right, num)
 
-        sums(root, '')
+        sums(root, 0)
 
         sum = 0
         for i in numbers:
-            sum += int(i)
+            sum += i
         return sum
