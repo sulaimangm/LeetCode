@@ -7,12 +7,10 @@
 class BSTIterator:
 
     def __init__(self, root: Optional[TreeNode]):
-        self.curr = TreeNode()
         self.stack = [root]
         while root and root.left:
             root = root.left
             self.stack.append(root)
-        root.left = self.curr
 
     def next(self) -> int:
         curr = self.stack.pop()
