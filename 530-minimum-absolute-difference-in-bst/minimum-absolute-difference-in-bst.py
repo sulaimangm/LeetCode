@@ -10,7 +10,7 @@ class Solution:
             return None
         diff = float('inf')
         prev = None
-        stack = []
+        '''stack = []
         output = []
         while stack or root:
             while root:
@@ -22,4 +22,17 @@ class Solution:
                 diff = min(diff, abs(root.val - prev))
             prev = root.val
             root = root.right
+        return diff'''
+
+        def inorder(root):
+            if not root:
+                return
+            nonlocal prev, diff
+            inorder(root.left)
+            if prev is not None:
+                diff = min(diff, abs(root.val - prev))
+            prev = root.val
+            inorder(root.right)
+
+        inorder(root)
         return diff
